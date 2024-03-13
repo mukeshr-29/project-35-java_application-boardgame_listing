@@ -136,8 +136,8 @@ pipeline{
                 from: 'jenkins@example.com',
                 replyTo: 'jenkins@example.com',
                 mimeType: 'text/html',
-                attachmentsPattern: 'trivyimg-report.html', 'trivyfs-report.html'
-                )
+                attachmentsPattern: 'trivyimg-report.html, trivyfs-report.html'
+            )
             }
         }
     }
