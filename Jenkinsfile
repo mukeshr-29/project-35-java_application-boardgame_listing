@@ -88,7 +88,7 @@ pipeline{
         stage('deploy to k8s'){
             steps{
                 script{
-                    withKubeConfig(caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://185.29.2.50:6443'){
+                    withKubeConfig(caCertificate: '', clusterName: 'board-game.us-east-1.eksctl.io', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://991659D376BFE222914237B4F82A702D.gr7.us-east-1.eks.amazonaws.com'){
                         sh 'kubectl apply -f deployment.yml -f service.yml' 
                     }
                 }
@@ -97,7 +97,7 @@ pipeline{
         stage('verify deployment'){
             steps{
                 script{
-                    withKubeConfig(caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://185.29.2.50:6443'){
+                    withKubeConfig(caCertificate: '', clusterName: 'board-game.us-east-1.eksctl.io', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://991659D376BFE222914237B4F82A702D.gr7.us-east-1.eks.amazonaws.com'){
                         sh 'kubectl get pods'
                         sh 'kubectl get svc'
                     }
