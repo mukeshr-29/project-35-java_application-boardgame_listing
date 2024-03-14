@@ -15,5 +15,6 @@ spec:
       containers:
       - name: boardgame
         image: mukeshr29/boardgamelist:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
